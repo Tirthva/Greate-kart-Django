@@ -75,7 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'greatkart.wsgi.application'
 
-AUTH_USER_MODEL = 'accounts.Account'  # Custom user model
+AUTH_USER_MODEL = 'accounts.Account'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -132,3 +132,19 @@ STATICFILES_DIRS = [
 # Media files (User-uploaded content)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'  # Directory for media files
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.INFO: 'danger',
+}
+
+
+# Email settings
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'tirthvaghani038@gmail.com'
+EMAIL_HOST_PASSWORD = 'zloeeehcionzmshj'
+EMAIL_USE_TLS = True
+
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

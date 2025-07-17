@@ -51,7 +51,7 @@ class Account(AbstractUser):
     last_login    = models.DateTimeField(auto_now=True)
     is_admin      = models.BooleanField(default=False)
     is_staff      = models.BooleanField(default=False)
-    is_active     = models.BooleanField(default=True)
+    is_active     = models.BooleanField(default=False)
     is_superadmin = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
@@ -67,4 +67,8 @@ class Account(AbstractUser):
 
     def has_module_perms(self, app_label):
         return True
+
+    class Meta:
+        verbose_name = 'Account'
+
 
